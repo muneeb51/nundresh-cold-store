@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Nundresh Cold Store</title>
+  <meta name="theme-color" content="#0a1a0d" />
+  <meta name="description"
+    content="Learn about Nundresh Cold Store — Kashmir's trusted apple cold storage facility since 1998." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&amp;family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --green: #2d7a3a;
+      --green-light: #4caf65;
+      --green-glow: #38d058;
+      --deep: #0a1a0d;
+      --cream: #f7f4ee;
+      --ice: #eef5ef;
+      --muted: #6b7c6e;
+      --text: #1a2e1d;
+      --border: rgba(45, 122, 58, 0.14);
+      --white: #ffffff;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5vw;
+      height: 72px;
+      background: rgba(10, 26, 13, 0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(45, 122, 58, 0.2);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    nav.scrolled {
+      box-shadow: 0 4px 36px rgba(0, 0, 0, 0.35);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+    }
+
+    .nav-logo-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--green), var(--green-light));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: white;
+      box-shadow: 0 4px 16px rgba(56, 208, 88, 0.3);
+    }
+
+    .nav-logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: white;
+      line-height: 1.1;
+    }
+
+    .nav-logo-sub {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.55rem;
+      color: rgba(255, 255, 255, 0.4);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 4px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+
+    .nav-cta {
+      background: var(--green) !important;
+      color: white !important;
+      border-radius: 8px !important;
+      font-weight: 600 !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--green-light) !important;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+      border: none;
+      background: none;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: white;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: rgba(10, 26, 13, 0.97);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 20px;
+        gap: 4px;
+        border-bottom: 1px solid rgba(45, 122, 58, 0.2);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+      }
+    }
+
+    /* ─── PAGE HERO ─── */
+    .page-hero {
+      padding: 140px 6vw 90px;
+      background: linear-gradient(155deg, #071209 0%, #0d2e12 55%, #1a4a22 100%);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=1600&q=50&auto=format&fit=crop') center/cover;
+      opacity: 0.08;
+    }
+
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center top, rgba(56, 208, 88, 0.08) 0%, transparent 65%);
+    }
+
+    .breadcrumb {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68rem;
+      color: rgba(255, 255, 255, 0.35);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .breadcrumb a {
+      color: var(--green-glow);
+      text-decoration: none;
+    }
+
+    .page-hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      font-weight: 900;
+      color: white;
+      position: relative;
+      z-index: 1;
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      text-shadow: 0 4px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .page-hero-sub {
+      font-size: clamp(0.95rem, 2vw, 1.15rem);
+      color: rgba(255, 255, 255, 0.55);
+      margin-top: 14px;
+      position: relative;
+      z-index: 1;
+      font-style: italic;
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* ─── SHARED ─── */
+    .s-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .s-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.9rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      margin-bottom: 14px;
+    }
+
+    .s-desc {
+      font-size: clamp(0.88rem, 1.8vw, 1rem);
+      color: var(--muted);
+      line-height: 1.85;
+      max-width: 520px;
+    }
+
+    .idiv {
+      width: 52px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green), var(--green-light));
+      border-radius: 2px;
+      margin: 12px 0 28px;
+    }
+
+    .idiv.c {
+      margin: 12px auto 28px;
+    }
+
+    .sh-c {
+      text-align: center;
+    }
+
+    .sh-c .s-desc {
+      margin: 0 auto;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-d1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-d2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-d3 {
+      transition-delay: 0.3s;
+    }
+
+    /* ─── STORY SECTION ─── */
+    .story-section {
+      padding: 110px 6vw;
+      background: var(--cream);
+    }
+
+    .story-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .story-inner {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+    }
+
+    .story-text p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 24px;
+    }
+
+    .story-visual {
+      border-radius: 28px;
+      background: linear-gradient(155deg, #071209 0%, #0d2e12 50%, #1a5228 100%);
+      padding: clamp(40px, 6vw, 60px) clamp(32px, 5vw, 52px);
+      box-shadow: 0 40px 100px rgba(45, 122, 58, 0.2), 0 0 0 1px rgba(56, 208, 88, 0.08);
+      position: relative;
+      overflow: hidden;
+      color: white;
+    }
+
+    .story-visual::after {
+      content: '';
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(56, 208, 88, 0.1) 0%, transparent 65%);
+      right: -80px;
+      bottom: -80px;
+      pointer-events: none;
+    }
+
+    .story-visual-year {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(5rem, 12vw, 7rem);
+      font-weight: 900;
+      color: white;
+      line-height: 1;
+      text-shadow: 0 0 60px rgba(56, 208, 88, 0.2);
+      margin-bottom: 10px;
+    }
+
+    .story-visual-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.4);
+      margin-bottom: 36px;
+    }
+
+    .story-milestones {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .story-milestone {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+    }
+
+    .story-milestone::before {
+      content: '→';
+      color: var(--green-glow);
+      font-weight: bold;
+    }
+
+    /* ─── VALUES SECTION ─── */
+    .values-sec {
+      padding: 90px 6vw;
+      background: var(--ice);
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      max-width: 1200px;
+      margin: 40px auto 0;
+    }
+
+    @media (max-width: 950px) {
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .value-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px 28px;
+      text-align: center;
+      transition: all 0.3s;
+      box-shadow: 0 4px 20px rgba(45, 122, 58, 0.05);
+    }
+
+    .value-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(45, 122, 58, 0.1);
+      border-color: rgba(45, 122, 58, 0.3);
+    }
+
+    .value-icon {
+      font-size: 2.8rem;
+      margin-bottom: 18px;
+    }
+
+    .value-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .value-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ─── OWNER SECTION ─── */
+    .owner-sec {
+      padding: 110px 6vw;
+      background: white;
+    }
+
+    .owner-card {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 28px;
+      padding: 56px;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 48px;
+      align-items: center;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 50px rgba(45, 122, 58, 0.08);
+    }
+
+    @media (max-width: 768px) {
+      .owner-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 40px 24px;
+      }
+    }
+
+    .owner-avatar {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 24px;
+      background: linear-gradient(135deg, var(--green), var(--green-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+      box-shadow: 0 16px 40px rgba(45, 122, 58, 0.25);
+    }
+
+    .owner-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 6px;
+    }
+
+    .owner-title {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--green-light);
+      margin-bottom: 24px;
+    }
+
+    .owner-bio {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+
+    .owner-contact {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      .owner-contact {
+        justify-content: center;
+      }
+    }
+
+    .owner-contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--ice);
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      color: var(--green);
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: 1px solid transparent;
+    }
+
+    .owner-contact-item:hover {
+      background: white;
+      border-color: var(--green);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(45, 122, 58, 0.1);
+    }
+
+    /* ─── CERTIFICATIONS ─── */
+    .cert-sec {
+      background: linear-gradient(155deg, #071209, #1a4a22);
+      padding: 80px 6vw;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cert-sec::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(56, 208, 88, 0.1) 0%, transparent 70%);
+    }
+
+    .cert-sec .s-tag {
+      color: var(--green-glow);
+    }
+
+    .cert-sec .s-title {
+      color: white;
+    }
+
+    .cert-items {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cert-item {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 24px 30px;
+      text-align: center;
+      min-width: 170px;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s;
+    }
+
+    .cert-item:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-5px);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .cert-icon {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+
+    .cert-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      color: rgba(255, 255, 255, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .cert-title {
+      font-size: 1.05rem;
+      color: white;
+      font-weight: 700;
+      margin-top: 6px;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--deep);
+      color: rgba(255, 255, 255, 0.65);
+      padding: 80px 5vw 36px;
+      margin-top: auto;
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 56px;
+      margin-bottom: 56px;
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-brand .nav-logo-text {
+      color: white;
+      font-size: 1.45rem;
+    }
+
+    .footer-brand .nav-logo-sub {
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    .footer-tagline {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.38);
+      line-height: 1.75;
+      margin-top: 18px;
+      max-width: 240px;
+    }
+
+    .footer-col h4 {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--green-glow);
+      margin-bottom: 20px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .footer-col a {
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.25);
+    }
+
+    /* ─── WHATSAPP FAB ─── */
+    .whatsapp-fab {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 999;
+      width: 60px;
+      height: 60px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
+      transition: all 0.3s;
+      animation: fab-pulse 2s ease-in-out 3s infinite;
+    }
+
+    .whatsapp-fab:hover {
+      transform: scale(1.12) translateY(-3px);
+      box-shadow: 0 12px 44px rgba(37, 211, 102, 0.65);
+      animation: none;
+    }
+
+    .whatsapp-fab .tooltip {
+      position: absolute;
+      right: 72px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #25d366;
+      color: white;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 8px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+
+    .whatsapp-fab .tooltip::after {
+      content: '';
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 6px solid transparent;
+      border-left-color: #25d366;
+    }
+
+    .whatsapp-fab:hover .tooltip {
+      opacity: 1;
+    }
+
+    @keyframes fab-pulse {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-8px)
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a class="nav-logo" href="index.html">
+      <div class="nav-logo-icon">❄</div>
+      <div><span class="nav-logo-text">Nundresh Cold Store</span><span class="nav-logo-sub">Kashmir · Est. 1998</span>
+      </div>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="breadcrumb"><a href="index.html">Home</a>&nbsp;/&nbsp;About Us</div>
+    <h1 class="page-hero-title">About Nundresh Cold Store</h1>
+    <p class="page-hero-sub">Our story, our values, and the people behind Kashmir's trusted cold chain</p>
+  </div>
+
+  <!-- STORY SECTION -->
+  <section class="story-section">
+    <div class="story-inner">
+      <div class="story-text reveal">
+        <span class="s-tag">Our Story</span>
+        <h2 class="s-title">25 Years of Cold Chain Excellence</h2>
+        <div class="idiv"></div>
+        <p>
+          Founded in 1998 in the heart of Kashmir's apple belt, Nundresh Cold Store began as a small facility serving
+          local orchardists in Nundresh village. Over two decades, we have grown into one of the valley's most trusted
+          industrial cold storage providers.
+        </p>
+        <p>
+          Our growth has always followed the needs of our growers. As apple cultivation expanded and markets demanded
+          longer shelf lives, we invested in controlled atmosphere technology, automated monitoring, and expanded
+          capacity — ensuring that Kashmir's prized fruit reaches domestic and international markets in perfect
+          condition.
+        </p>
+        <p>
+          Today, we serve over 500 growers and fruit merchants across Sopore, Shopian, Pulwama, and beyond, with a
+          combined storage capacity exceeding 5,000 metric tonnes.
+        </p>
+      </div>
+
+      <div class="story-visual reveal reveal-d1">
+        <div class="story-visual-year">1998</div>
+        <div class="story-visual-label">Year Founded</div>
+        <div class="story-milestones">
+          <div class="story-milestone">Established first 500 MT cold storage unit</div>
+          <div class="story-milestone">Expanded to 2,000 MT with modern refrigeration (2005)</div>
+          <div class="story-milestone">Introduced Controlled Atmosphere (CA) storage (2012)</div>
+          <div class="story-milestone">Reached 5,000 MT total capacity (2018)</div>
+          <div class="story-milestone">Digital monitoring & remote reporting systems (2022)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES SECTION -->
+  <section class="values-sec">
+    <div class="sh-c reveal">
+      <span class="s-tag">Our Values</span>
+      <h2 class="s-title">What Drives Us</h2>
+      <div class="idiv c"></div>
+    </div>
+
+    <div class="values-grid">
+      <div class="value-card reveal">
+        <div class="value-icon">🎯</div>
+        <h3 class="value-title">Precision</h3>
+        <p class="value-desc">Every degree matters. We maintain exact temperature and humidity with automated systems
+          and daily manual checks.</p>
+      </div>
+      <div class="value-card reveal reveal-d1">
+        <div class="value-icon">🤝</div>
+        <h3 class="value-title">Trust</h3>
+        <p class="value-desc">Growers entrust us with their livelihoods. We honor that trust with transparency, fair
+          pricing, and zero surprises.</p>
+      </div>
+      <div class="value-card reveal reveal-d2">
+        <div class="value-icon">🌱</div>
+        <h3 class="value-title">Community</h3>
+        <p class="value-desc">We are from Kashmir, for Kashmir. Supporting local farmers and the valley's apple economy
+          is our core mission.</p>
+      </div>
+      <div class="value-card reveal reveal-d3">
+        <div class="value-icon">🔬</div>
+        <h3 class="value-title">Innovation</h3>
+        <p class="value-desc">Continuous investment in the latest cold chain technology ensures our growers always have
+          access to the best storage science.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OWNER SECTION -->
+  <section class="owner-sec">
+    <div class="sh-c reveal" style="margin-bottom: 50px;">
+      <span class="s-tag">Leadership</span>
+      <h2 class="s-title">Meet the Owner</h2>
+      <div class="idiv c"></div>
+    </div>
+
+    <div class="owner-card reveal">
+      <div class="owner-avatar">👨‍💼</div>
+      <div>
+        <h3 class="owner-name">Mr. Feroz ahmad khan</h3>
+        <div class="owner-title">Founder & Managing Director</div>
+        <p class="owner-bio">
+          A lifelong resident of Kashmir and a passionate advocate for the valley's apple industry, Mr.feroz ahmad khan
+          founded this facility with a vision to empower local growers with the same cold chain infrastructure available
+          in global markets. With over 30 years in the fruit industry, he personally oversees facility operations,
+          ensuring every batch of apples receives the care and precision it deserves.
+        </p>
+        <p class="owner-bio">
+          His deep relationships with growers across Sopore, Shopian, and Pulwama, combined with his understanding of
+          modern cold chain logistics, have made Nundresh Cold Store synonymous with trust in the Kashmir valley.
+        </p>
+        <div class="owner-contact">
+          <a href="tel:+919876543210" class="owner-contact-item">📞 +91 98765 43210</a>
+          <a href="mailto:gn@nundreshcoldstore.com" class="owner-contact-item">✉️ gn@nundreshcoldstore.com</a>
+          <a href="https://wa.me/919876543210" class="owner-contact-item" target="_blank">💬 WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section class="cert-sec">
+    <div class="reveal">
+      <span class="s-tag">Compliance & Quality</span>
+      <h2 class="s-title">Certified & Compliant</h2>
+    </div>
+    <div class="cert-items">
+      <div class="cert-item reveal">
+        <div class="cert-icon">📜</div>
+        <div class="cert-label">Certification</div>
+        <div class="cert-title">FSSAI Licensed</div>
+      </div>
+      <div class="cert-item reveal reveal-d1">
+        <div class="cert-icon">🏛️</div>
+        <div class="cert-label">Government</div>
+        <div class="cert-title">J&K Govt. Registered</div>
+      </div>
+      <div class="cert-item reveal reveal-d2">
+        <div class="cert-icon">🌿</div>
+        <div class="cert-label">Quality</div>
+        <div class="cert-title">ISO 22000 Aligned</div>
+      </div>
+      <div class="cert-item reveal reveal-d3">
+        <div class="cert-icon">🔋</div>
+        <div class="cert-label">Power</div>
+        <div class="cert-title">100% Backup Power</div>
+      </div>
+      <div class="cert-item reveal">
+        <div class="cert-icon">🔒</div>
+        <div class="cert-label">Security</div>
+        <div class="cert-title">24/7 Surveillance</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="nav-logo" href="index.html" style="margin-bottom:18px;display:inline-flex;text-decoration:none;">
+          <div class="nav-logo-icon">❄</div>
+          <div><span class="nav-logo-text">Nundresh Cold Store</span><span class="nav-logo-sub">Kashmir · Est.
+              1998</span></div>
+        </a>
+        <p class="footer-tagline">Preserving Kashmir's finest apples with industrial cold chain precision since 1998.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Cold Storage</a></li>
+          <li><a href="services.html">CA Storage</a></li>
+          <li><a href="services.html">Grading & Packing</a></li>
+          <li><a href="services.html">Logistics</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+          <li><a href="mailto:info@nundreshcoldstore.com">info@nundreshcoldstore.com</a></li>
+          <li><a href="#">Nundresh, Kashmir, J&K</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Nundresh Cold Store. All rights reserved.</span>
+      <span>Kashmir, India</span>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FAB -->
+  <a href="https://wa.me/919876543210?text=Hello%2C%20I%27m%20interested%20in%20cold%20storage%20at%20Nundresh%20Cold%20Store"
+    class="whatsapp-fab" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <span class="tooltip">Chat on WhatsApp</span>
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
+
+  <script>
+    /* NAV */
+    const nb = document.getElementById('navbar');
+    window.addEventListener('scroll', () => nb.classList.toggle('scrolled', window.scrollY > 40));
+    const hbg = document.getElementById('hamburger');
+    hbg.addEventListener('click', () => {
+      document.getElementById('nav-links').classList.toggle('open');
+      hbg.classList.toggle('open');
+    });
+    document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => {
+      document.getElementById('nav-links').classList.remove('open');
+      hbg.classList.remove('open');
+    }));
+
+    /* REVEAL */
+    const rvls = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    }), { threshold: 0.07, rootMargin: '0px 0px -30px 0px' });
+    rvls.forEach(r => obs.observe(r));
+  </script>
+</body>
+
+</html>
